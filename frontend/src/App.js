@@ -8,20 +8,24 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import ProductScreen from './screens/ProductScreen';
 const App=()=> {
   return (
     <BrowserRouter>
     <Header/>
+    
+    
     <main className="py-3">
+    
       <Container>
-        <Routes>
-         
-        <Route path='/' element={<HomeScreen/>} exact/>
-       
+      <Routes>
+        <Route path='/product/:id' element={<ProductScreen/>}/>
+        <Route path='/' element={<HomeScreen/>} />
         </Routes>
-        
       </Container>
+      
       </main>
+      
     <Footer/>
     </BrowserRouter>
   );
