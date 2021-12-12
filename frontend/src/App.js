@@ -13,19 +13,14 @@ const App=()=> {
   return (
     <BrowserRouter>
     <Header/>
-    
-    
     <main className="py-3">
-    
       <Container>
       <Routes>
         <Route path='/product/:id' element={<ProductScreen/>}/>
         <Route path='/' element={<HomeScreen/>} />
         </Routes>
       </Container>
-      
       </main>
-      
     <Footer/>
     </BrowserRouter>
   );

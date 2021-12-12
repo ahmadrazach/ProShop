@@ -1,9 +1,14 @@
 import React from 'react'
+import {Link} from "react-router-dom"
+import {Row,Col,Image,ListGroup,Card,Button} from "react-router-bootstrap";
+import Rating from '../components/Rating';
+import products from '../products';
 
-function ProductScreen() {
+const ProductScreen=({match})=> {
+    console.log(match.params.id);
     return (
         <div>
-            <h1>Product screen</h1>
+            Abey Show hoja yr!
         </div>
     )
 }
