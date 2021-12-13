@@ -1,3 +1,20 @@
+## NPM packages using
+
+- React Bootstrap
+- react-router-dom ( BrowserStack,Routes,Route)
+- react-router-bootstrap (LinkContainer)
+
+## Theming
+
+- Bootswatch
+- Font Aewsome
+
+## react techniques used
+
+-functional components
+
+- props
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,20 +85,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-## NPM packages using
-
-- React Bootstrap
-- react-router-dom ( BrowserStack,Routes,Route)
-- react-router-bootstrap (LinkContainer)
-
-## Theming
-
-- Bootswatch
-- Font Aewsome
-
-## react techniques used
-
--functional components
-
-- props
