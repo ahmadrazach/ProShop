@@ -26,3 +26,4 @@ Ecommerce App using MERN Stack
 - express
 - nodemon ( for constantly watching our server so we don't have to keep resetart server after every update)
 - consurrently ( for concurrently running both frontend,backend server)
+- dotenv ( to automatically loads enivronment variables from .env file into the process.env object)

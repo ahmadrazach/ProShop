@@ -1,5 +1,5 @@
 
-module.exports = [
+const products = [
   {
     _id: '1',
     name: 'Airpods Wireless Bluetooth Headphones',
@@ -79,3 +79,4 @@ module.exports = [
     numReviews: 12,
   },
 ]
+ export default products;
