@@ -3,7 +3,7 @@ import {Row,Col} from 'react-bootstrap';
 import Product from '../components/Product'
 import axios from 'axios'
 
-function HomeScreen() {
+const HomeScreen=()=> {
   const [products,setProducts]=useState([])
   useEffect(()=>{
     //fetching products function from the backend
