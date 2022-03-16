@@ -1,6 +1,6 @@
 # ProShop
 
-Ecommerce App using MERN Stack
+Ecommerce App using MERN Stack ( Fetching Data from Express,making Local API)
 
 ## VS Code extensions for MERN productivity:
 
