@@ -10,6 +10,12 @@ Ecommerce App using MERN Stack
 
 ## Node Modules
 
+# Fontend
+
 - react-bootstrap
 - react-router-dom
 -
+
+# Backend
+
+- express
