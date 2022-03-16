@@ -9,7 +9,7 @@ const HomeScreen=()=> {
     //fetching products function from the backend
     const fetchProducts=async()=>{
       const {data}=await axios.get('/api/products')
-      console.log(setProducts(data))
+      setProducts(data)
     }
     fetchProducts()
   },[])  

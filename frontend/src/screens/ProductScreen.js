@@ -12,7 +12,7 @@ const ProductScreen=({match})=> {
       //fetching product function from the backend
       const fetchProduct=async()=>{
         const {data}=await axios.get(`/api/products${params.id}`)
-        console.log(setProduct(data))
+        setProduct(data)
       }
       fetchProduct()
     },[])  
