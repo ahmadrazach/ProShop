@@ -1,5 +1,5 @@
 
-exports.products = [
+module.exports = [
   {
     _id: '1',
     name: 'Airpods Wireless Bluetooth Headphones',
@@ -79,4 +79,3 @@ exports.products = [
     numReviews: 12,
   },
 ]
-
