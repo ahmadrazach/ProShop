@@ -8,13 +8,18 @@ Ecommerce App using MERN Stack
 - JavaScript (ES6) code snippets
 - Prettier
 
-## Node Modules
+### Node Modules
 
-# Fontend
+## Fontend
 
 - react-bootstrap
 - react-router-dom
--
+- axios
+
+# React concepts
+
+- useEffect ( for working same which constructor do in the class components )
+- useState ( updating state of the variable)
 
 # Backend
 
