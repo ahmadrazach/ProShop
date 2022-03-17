@@ -27,4 +27,5 @@ Ecommerce App using MERN Stack
 - nodemon ( for constantly watching our server so we don't have to keep resetart server after every update)
 - consurrently ( for concurrently running both frontend,backend server)
 - dotenv ( to automatically loads enivronment variables from .env file into the process.env object)
-- mongoose ) for modeling your application data for node.js)
+- mongoose ( for modeling your application data for node.js)
+- bcryptjs ( for encrypting password )
