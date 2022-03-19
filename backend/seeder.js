@@ -9,6 +9,7 @@ import connectDB from "./config/db.js";
 
 dotenv.config()
 
+//connecting database
 connectDB()
 
 const importData=async()=>{
@@ -33,6 +34,7 @@ const importData=async()=>{
         process.exit(1)
     }
 }
+
 
 const destroyData=async()=>{
     try{

@@ -6,6 +6,7 @@ import products from './data/products.js'
 
 dotenv.config()
 
+//connecting database
 connectDB()
 
 const app=express()
