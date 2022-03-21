@@ -21,6 +21,7 @@ router.get('/:id',asyncHandler(async(req,res)=>{
     if(product)
     {
         res.json(product)    
+        console.log("found")
     }
     else{
         res.status(404)
