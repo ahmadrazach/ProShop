@@ -29,3 +29,4 @@ Ecommerce App using MERN Stack
 - dotenv ( to automatically loads enivronment variables from .env file into the process.env object)
 - mongoose ( for modeling your application data for node.js)
 - bcryptjs ( for encrypting password )
+- express-async-handler (simple middleware for handling exceptions inside of async express routes and passing them to your express error handlers)
