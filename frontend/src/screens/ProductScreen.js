@@ -1,26 +1,34 @@
-import React,{useState,useEffect} from 'react'
+import React,{useEffect} from 'react'
 import {Link} from "react-router-dom"
+import {useDispatch,useSelector} from 'react-redux'
 import {Row,Col,Image,ListGroup,Card,Button} from "react-bootstrap";
 import Rating from '../components/Rating';
 import { useParams } from 'react-router';
-import axios from 'axios';
+import { listProductDetails } from '../actions/productActions';
+import Loader from '../components/Loader';
+import Message from '../components/Message';
+
 
 const ProductScreen=({match})=> {
-    const params=useParams();
-    const [product,setProduct]=useState({})
-    useEffect(()=>{
-      //fetching product function from the backend
-      const fetchProduct=async()=>{
-        const {data}=await axios.get(`/api/products${params.id}`)
-        setProduct(data)
-      }
-      fetchProduct()
-    },[params])  
+    //returns a reference to the dispatch function from the Redux store. You may use it to dispatch actions as needed.
+    const dispatch=useDispatch()
 
+    const params=useParams();
+    
+    //taking the product details state using useSelector
+    const productDetails=useSelector(state=>state.productDetails)
+    //destructing productDetails
+    const {loading,error,product}=productDetails
+    useEffect(()=>{
+        dispatch(listProductDetails(params.id))
+    },[dispatch,match])  
+
+    
     return (
         <>
             <Link className="btn btn-light my-3" to="/">Go Back</Link>
-            <Row>
+            {loading?<Loader/>:error?<Message variant='danger'>{error}</Message>:(
+                <Row>
                 <Col md={6}>
                     <Image src={product.image} alt={product.name} fluid/>
                 </Col>
@@ -79,6 +87,8 @@ const ProductScreen=({match})=> {
                     </Card>
                 </Col>
             </Row>
+            )}
+            
             
         </>
     )
