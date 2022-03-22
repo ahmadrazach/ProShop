@@ -21,6 +21,7 @@ router.get('/:id',asyncHandler(async(req,res)=>{
     //console.log(product)
     if(product)
     {
+        
         res.json(product)    
         //console.log(res.json(product))
     }
