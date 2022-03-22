@@ -15,7 +15,7 @@ Ecommerce App using MERN Stack
 - react-bootstrap
 - react-router-dom
 - axios
-- redux,react-redux,redux-thunk,redux-devtools-extension
+- redux,react-redux,redux-thunk(to use function within the functions),redux-devtools-extension
 # React concepts
 
 - useEffect ( for working same which constructor do in the class components )
