@@ -11,7 +11,7 @@ import Message from '../components/Message';
 
 const ProductScreen=({match})=> {
     //setting up quantity
-    const [qty,setQty]=useState(0)  
+    const [qty,setQty]=useState(1)  
     //returns a reference to the dispatch function from the Redux store. You may use it to dispatch actions as needed.
     const dispatch=useDispatch()
 
