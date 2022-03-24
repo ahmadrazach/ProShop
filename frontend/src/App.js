@@ -9,6 +9,8 @@ import {
   Route
 } from "react-router-dom";
 import ProductScreen from './screens/ProductScreen';
+import  CartScreen  from './screens/CartScreen';
+
 const App=()=> {
   return (
     <BrowserRouter>
@@ -17,6 +19,7 @@ const App=()=> {
       <Container>
       <Routes>
         <Route  path='/product/:id' element={<ProductScreen/>}/>
+        <Route path='/cart/:id' element={<CartScreen/>}/>
         <Route exact path='/' element={<HomeScreen/>} />
         </Routes>
       </Container>
