@@ -32,3 +32,9 @@ Ecommerce App using MERN Stack
 - bcryptjs ( for encrypting password )
 - express-async-handler (simple middleware for handling exceptions inside of async express routes and passing them to your express error handlers)
 - jsonwebtoken ( to send the userid to private routes in our application with the header)
+
+
+## concepts I learn in it
+
+- Middleware
+    provides common services and capabilities to applications outside of what's offered by the operating system. Data management, application services, messaging, authentication, and API management are all commonly handled by middleware
