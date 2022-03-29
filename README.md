@@ -16,6 +16,7 @@ Ecommerce App using MERN Stack
 - react-router-dom
 - axios
 - redux,react-redux,redux-thunk(to use function within the functions),redux-devtools-extension
+
 # React concepts
 
 - useEffect ( for working same which constructor do in the class components )
@@ -30,3 +31,4 @@ Ecommerce App using MERN Stack
 - mongoose ( for modeling your application data for node.js)
 - bcryptjs ( for encrypting password )
 - express-async-handler (simple middleware for handling exceptions inside of async express routes and passing them to your express error handlers)
+- jsonwebtoken ( to send the userid to private routes in our application with the header)
