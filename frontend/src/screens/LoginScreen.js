@@ -42,11 +42,10 @@ const LoginScreen=()=> {
                 placeholder='Enter password'
                 value={password}
                 onChange={(e)=>setPassword(e.target.value)}>
-                    
                 </Form.Control>
             </Form.Group>
 
-            <Button type="submit" variant='primary'></Button>
+            <Button type="submit" variant='primary'>Sign In</Button>
         </Form>
 
         <Row className='py-3'>
