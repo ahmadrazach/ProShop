@@ -18,7 +18,7 @@ const LoginScreen=()=> {
     const submitHandler=(e)=>{
         e.preventDefault()
         //dispatch ogin
-
+        //2nd video ... 10 34
     }
   return (
     <FormContainer>
