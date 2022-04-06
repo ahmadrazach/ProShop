@@ -1,28 +1,42 @@
 import React,{useState,useEffect} from 'react'
-import {Link,useLocation} from 'react-router-dom'
+import {Link,useLocation,useNavigate} from 'react-router-dom'
 import {Form,Button,Row,Col, FormControl} from 'react-bootstrap'
 import { useDispatch,useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import FormContainer from '../components/FormContainer'
 import {login} from '../actions/userActions'
-
+import { useHistory } from "react-router";
 
 const LoginScreen=()=> {
 
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('')
 
+    //taking the state of variables from global state
+    const dispatch=useDispatch()
+    const userLogin=useSelector(state=>state.userLogin)
+    const {loading,error,userInfo}=userLogin
+
     const location=useLocation()
     const redirect=location.search ? location.search.split('=')[1]:'/'
+    
+    const navigate = useNavigate();
+    useEffect(()=>{
+        if(userInfo){
+            navigate(redirect)
+        }
+    },[navigate,userInfo,redirect])
+    
     const submitHandler=(e)=>{
         e.preventDefault()
-        //dispatch ogin
-        //2nd video ... 10 34
+        dispatch(login(email,password))
     }
   return (
     <FormContainer>
         <h1>Sign In</h1>
+        {error && <Message variant='danger'>{error}</Message>}
+        {loading && <Loader/>}
         <Form onSubmit={submitHandler}>
             <Form.Group controlId='email'>
                 <Form.Label>Email Address</Form.Label>
