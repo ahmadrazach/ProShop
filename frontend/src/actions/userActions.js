@@ -1,5 +1,5 @@
 import axios from "axios";
-import { USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS,USER_LOGIN_FAIL, USER_LOGUT, USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS, USER_REGISTER_FAIL, USER_DETAILS_SUCCESS, USER_DETAILS_FAIL, USER_DETAILS_REQUEST} from "../constants/userConstants";
+import { USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS,USER_LOGIN_FAIL, USER_LOGUT, USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS, USER_REGISTER_FAIL, USER_DETAILS_SUCCESS, USER_DETAILS_FAIL, USER_DETAILS_REQUEST, USER_UPDATE_PROFILE_REQUEST, USER_UPDATE_PROFILE_SUCCESS, USER_UPDATE_PROFILE_FAIL} from "../constants/userConstants";
 
 export const login=(email,password)=>async(dispatch)=>{
     try{
@@ -102,6 +102,44 @@ export const getUserDetails=(id)=>async(dispatch,getState)=>{
     catch(error){
         dispatch({
             type:USER_DETAILS_FAIL,
+            payload:
+            error.response && error.response.data.message
+            ? error.response.data.message:error.message,
+        })
+    }
+}
+
+// for profileupdation done
+export const updateUserProfile=(user)=>async(dispatch,getState)=>{
+    try{
+        //dispatch of USER_UPDATE_PROFILE_REQUEST
+        dispatch({
+            type:USER_UPDATE_PROFILE_REQUEST,
+        })
+
+        //getting userInfo from the state
+        const {userLogin:{userInfo}}=getState()
+
+        
+        const config={
+            headers:{
+                'Content-Type':'application/json',
+                Authorization:`Bearer ${userInfo.token}`
+            },
+        }
+        //put request to update exisiting information
+        const {data}=await axios.put(`/api/users/profile`,user,config
+        )
+        
+        //dispatch of USER_DETAILS_SUCCESS
+        dispatch({
+            type:USER_UPDATE_PROFILE_SUCCESS,
+            payload:data
+        })
+    }
+    catch(error){
+        dispatch({
+            type:USER_UPDATE_PROFILE_FAIL,
             payload:
             error.response && error.response.data.message
             ? error.response.data.message:error.message,
