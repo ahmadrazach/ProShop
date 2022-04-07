@@ -1,5 +1,5 @@
 import axios from "axios";
-import { USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS,USER_LOGIN_FAIL, USER_LOGUT, USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS, USER_REGISTER_FAIL, USER_DETAILS_SUCCESS, USER_DETAILS_FAIL} from "../constants/userConstants";
+import { USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS,USER_LOGIN_FAIL, USER_LOGUT, USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS, USER_REGISTER_FAIL, USER_DETAILS_SUCCESS, USER_DETAILS_FAIL, USER_DETAILS_REQUEST} from "../constants/userConstants";
 
 export const login=(email,password)=>async(dispatch)=>{
     try{
@@ -75,22 +75,24 @@ export const register=(name,email,password)=>async(dispatch)=>{
 // for profileupdation
 export const getUserDetails=(id)=>async(dispatch,getState)=>{
     try{
-        //dispatch of USER_LOGIN_REQUEsT
+        //dispatch of USER_DETAILS_REQUEST
         dispatch({
-            type:USER_REGISTER_REQUEST
+            type:USER_DETAILS_REQUEST,
         })
 
         //getting userInfo from the state
         const {userLogin:{userInfo}}=getState()
 
+        
         const config={
             headers:{
                 'Content-Type':'application/json',
                 Authorization:`Bearer ${userInfo.token}`
             },
         }
-        const {data}=await axios.post(`/api/users/${id}`,config
+        const {data}=await axios.get(`/api/users/${id}`,config
         )
+        
         //dispatch of USER_DETAILS_SUCCESS
         dispatch({
             type:USER_DETAILS_SUCCESS,
