@@ -26,7 +26,7 @@ import { addToCart,removeFromCart } from '../actions/cartActions'
     //to proceed to the checkout
     const checkoutHandler=()=>{
         console.log('Checkout')
-        navigate('/login?reirect=shopping')
+        navigate('/login?redirect=shipping')
     }
     useEffect(()=>{
         if(productId){
