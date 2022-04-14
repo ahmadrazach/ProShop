@@ -5,7 +5,7 @@ import {Row,Col,ListGroup,Image,Form,Button,Card} from "react-bootstrap"
 import Message from '../components/Message'
 import { addToCart,removeFromCart } from '../actions/cartActions'
 
- const CartScreen = () => {
+ const CartScreen = ({history}) => {
     const params=useParams()
     const productId=params.id
 
@@ -16,6 +16,7 @@ import { addToCart,removeFromCart } from '../actions/cartActions'
     const dispatch=useDispatch()
 
     const cart=useSelector((state)=>state.cart)
+    const userDetails=useSelector(state=>state.userDetails)
     const{cartItems}=cart
     
     const removeFromCartHandler=(id)=>{
@@ -25,8 +26,11 @@ import { addToCart,removeFromCart } from '../actions/cartActions'
     const navigate=useNavigate()
     //to proceed to the checkout
     const checkoutHandler=()=>{
-        console.log('Checkout')
-        navigate('/login?redirect=shipping')
+        if(!userDetails){
+            navigate('/login')
+         } else{
+            navigate('/shipping')
+         }
     }
     useEffect(()=>{
         if(productId){
