@@ -68,7 +68,7 @@ import { addToCart,removeFromCart } from '../actions/cartActions'
                                                             </option>
                                                         ))}
                                             </Form.Control>
-                                        </Col>
+                                        </Col> 
                                         <Col md={2}>
                                             <Button
                                             type='button'
