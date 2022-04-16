@@ -1,7 +1,7 @@
 import { ORDER_CREATE_FAILS, ORDER_CREATE_REQUEST, ORDER_CREATE_SUCCESS } from "../constants/orderConstants"
 import axios from 'axios'
 
-export const createdOrder=(order)=>async(dispatch,getState)=>{
+export const createOrder=(order)=>async(dispatch,getState)=>{
     try{
         //dispatch of ORDER_CREATE_REQUEST
         dispatch({
