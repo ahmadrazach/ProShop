@@ -19,7 +19,7 @@ export const createdOrder=(order)=>async(dispatch,getState)=>{
             },
         }
         //put request to update exisiting information
-        const {data}=await axios.ppst(`/api/orders`,order,config
+        const {data}=await axios.post(`/api/orders`,order,config
         )
         
         //dispatch of USER_DETAILS_SUCCESS
