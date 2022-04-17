@@ -37,6 +37,7 @@ import { addToCart,removeFromCart } from '../actions/cartActions'
             dispatch(addToCart(productId,qty))
         }
     },[dispatch,productId,qty])
+    
    return (
     <div>
         <Row>
