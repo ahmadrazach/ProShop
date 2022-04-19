@@ -56,7 +56,7 @@ export const getOrderDetails=(id)=>async(dispatch,getState)=>{
             },
         }
         //put request to update exisiting information
-        const {data}=await axios.get(`/api/orders${id}`,config
+        const {data}=await axios.get(`/api/orders/${id}`,config
         )
         
         //dispatch of USER_DETAILS_SUCCESS
