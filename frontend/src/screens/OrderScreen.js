@@ -1,4 +1,5 @@
 import React,{useEffect, useState} from 'react'
+import axios from 'axios'
 import {Link,useParams } from 'react-router-dom'
 import {Button,Row,Col,ListGroup,Image,Card} from 'react-bootstrap'
 import { useDispatch,useSelector } from 'react-redux'
@@ -15,12 +16,16 @@ const OrderScreen = () => {
     const params=useParams();
     const orderId=params.id;
 
+    const [sdkReady,setSdkReady]=useState(false)
     const dispatch =useDispatch();
     // const cart=useSelector((state)=>state.cart)
     
     
     const orderDetails=useSelector(state=>state.orderDetails)
     const {order,loading,error}=orderDetails
+
+    const orderPay=useSelector(state=>state.orderPay)
+    const {loading:loadingPay,success:successPay}=orderPay
 
     //calculate pricing
     if(!loading){
@@ -41,8 +46,31 @@ const OrderScreen = () => {
 
  
     useEffect(()=>{
-        dispatch(getOrderDetails(orderId))
-    },[])
+        const addPaypalScript=async()=>{
+            const {data:clientId}=await axios.get('/api/config/paypal')
+            // console.log(clientId)
+            const script=document.createElement('script')
+            script.type='text/javascript'
+            script.src= `https://www.paypal.com/sdk/js?client-id=${clientId}`
+            script.async=true
+            script.onload=()=>{
+                setSdkReady(true)
+            }
+        }
+
+        addPaypalScript(getOrderDetails(orderId))
+        if(!order||successPay){
+            dispatch(getOrderDetails(orderId))
+        }
+        else if(!order.isPaid){
+            if(!window.paypal){
+                addPaypalScript()
+            }else{
+                setSdkReady(true)
+            }
+        }
+        
+    },[dispatch,orderId,successPay,order])
 
     return loading 
     ? <Loader/>
