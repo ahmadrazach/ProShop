@@ -56,6 +56,7 @@ const OrderScreen = () => {
             script.onload=()=>{
                 setSdkReady(true)
             }
+            document.body.appendChild(script)
         }
 
         addPaypalScript(getOrderDetails(orderId))
