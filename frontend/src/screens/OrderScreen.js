@@ -1,5 +1,6 @@
 import React,{useEffect, useState} from 'react'
 import axios from 'axios'
+import {PayPalButton} from 'react-paypal-button-v2'
 import {Link,useParams } from 'react-router-dom'
 import {Button,Row,Col,ListGroup,Image,Card} from 'react-bootstrap'
 import { useDispatch,useSelector } from 'react-redux'
@@ -7,9 +8,9 @@ import CheckoutSteps from '../components/CheckoutSteps'
 import Message from '../components/Message'
 import {useNavigate} from 'react-router-dom'
 // import { saveShippingAddress } from '../actions/cartActions'
-import { getOrderDetails} from '../actions/orderActions'
+import { getOrderDetails, payOrder} from '../actions/orderActions'
 import Loader from '../components/Loader'
-
+import { ORDER_PAY_RESET } from '../constants/orderConstants'
 
 const OrderScreen = () => {
   
@@ -59,8 +60,9 @@ const OrderScreen = () => {
             document.body.appendChild(script)
         }
 
-        addPaypalScript(getOrderDetails(orderId))
+       
         if(!order||successPay){
+            dispatch({type:ORDER_PAY_RESET})
             dispatch(getOrderDetails(orderId))
         }
         else if(!order.isPaid){
@@ -72,6 +74,12 @@ const OrderScreen = () => {
         }
         
     },[dispatch,orderId,successPay,order])
+
+
+    const successPaymentHandler=(paymentResult)=>{
+        console.log(paymentResult)
+        dispatch(payOrder(orderId,paymentResult))
+    }
 
     return loading 
     ? <Loader/>
@@ -163,6 +171,19 @@ const OrderScreen = () => {
                                 <Col>${order.totalPrice}</Col>
                             </Row>
                         </ListGroup.Item>
+                        {!order.isPaid && (
+                            <ListGroup.Item>
+                                {loadingPay && <Loader/>}
+                                {!sdkReady?(
+                                    <Loader/>
+                                ):(
+                                    <PayPalButton
+                                    amout={order.totalPrice}
+                                    onSuccess={successPaymentHandler}
+                                    />
+                                )}
+                            </ListGroup.Item>
+                        )}
                     </ListGroup>
                 </Card>
             </Col>

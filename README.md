@@ -32,6 +32,7 @@ Ecommerce App using MERN Stack
 - bcryptjs ( for encrypting password )
 - express-async-handler (simple middleware for handling exceptions inside of async express routes and passing them to your express error handlers)
 - jsonwebtoken ( to send the userid to private routes in our application with the header)
+- react-paypal-button-v2
 
 
 ## concepts I learn in it
