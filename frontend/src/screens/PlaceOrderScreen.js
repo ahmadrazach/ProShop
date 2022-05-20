@@ -12,39 +12,50 @@ const PlaceOrderScreen = () => {
   
     const dispatch =useDispatch();
     const cart=useSelector((state)=>state.cart)
+
+    const navigate=useNavigate();
+
+    if (!cart.shippingAddress.address) {
+        navigate('/shipping')
+      } else if (!cart.paymentMethod) {
+        navigate('/payment')
+      }
     //calculate pricing
     const addDecimals=(num)=>{
         return (Math.round(num*100)/100).toFixed(2)
     }
-    cart.itemsPrice=addDecimals(
-        cart.cartItems.reduce((acc,item)=>acc+item.price*item.qty,0)
-    )
-    cart.shippingPrice=addDecimals(cart.itemsPrice>100?0:100)
-    cart.taxPrice=addDecimals(Number((0.15*cart.itemsPrice).toFixed(2)))
-    cart.totalPrice=(Number(cart.itemsPrice)+Number(cart.shippingPrice)+
-    Number(cart.taxPrice)).toFixed()
 
-    const orderCreate=useSelector(state=>state.orderCreate)
+    cart.itemsPrice = addDecimals(
+    cart.cartItems.reduce((acc, item) => acc + item.price * item.qty, 0))
+    cart.shippingPrice = addDecimals(cart.itemsPrice > 100 ? 0 : 100)
+    cart.taxPrice = addDecimals(Number((0.15 * cart.itemsPrice).toFixed(2)))
+    cart.totalPrice = (
+        Number(cart.itemsPrice) +
+        Number(cart.shippingPrice) +
+        Number(cart.taxPrice)).toFixed(2)
+
+    const orderCreate = useSelector((state) => state.orderCreate)
     const {order,success,error}=orderCreate
 
-    const navigate=useNavigate();
+    
     useEffect(()=>{
         if(success){
             navigate(`/order/${order._id}`)
         }
-    },[navigate,success])// eslint-disable-next-line
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[navigate, success])// eslint-disable-next-line
 
     const placeOrderHandler=()=>{
         dispatch(
             createOrder({
-                orderItems:cart.cartItems,
-                shippingAddress:cart.shippingAddress,
-                paymentMethod:cart.paymentMethod,
-                itemsPrice:cart.itemsPrice,
-                shippingPrice:cart.shippingPrice,
-                taxPrice:cart.taxPrice,
-                totalPrice:cart.totalPrice,
-            })
+                orderItems: cart.cartItems,
+                shippingAddress: cart.shippingAddress,
+                paymentMethod: cart.paymentMethod,
+                itemsPrice: cart.itemsPrice,
+                shippingPrice: cart.shippingPrice,
+                taxPrice: cart.taxPrice,
+                totalPrice: cart.totalPrice,
+              })
         )
     }
     return (

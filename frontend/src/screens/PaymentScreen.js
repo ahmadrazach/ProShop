@@ -24,6 +24,7 @@ const PaymentScreen = () => {
         dispatch(savePaymentMethod(paymentMethod))
         navigate('/placeorder')
     }
+    
   return (
     <FormContainer>
         <CheckoutSteps step1 step2 step3/>

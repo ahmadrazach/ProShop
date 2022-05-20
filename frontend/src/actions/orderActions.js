@@ -19,13 +19,12 @@ export const createOrder=(order)=>async(dispatch,getState)=>{
             },
         }
         //put request to update exisiting information
-        const {data}=await axios.post(`/api/orders`,order,config
-        )
+        const {data}=await axios.post(`/api/orders`,order,config)
         
         //dispatch of USER_DETAILS_SUCCESS
         dispatch({
             type:ORDER_CREATE_SUCCESS,
-            payload:data
+            payload:data,
         })
     }
     catch(error){
@@ -52,12 +51,11 @@ export const getOrderDetails=(id)=>async(dispatch,getState)=>{
         
         const config={
             headers:{
-                Authorization:`Bearer ${userInfo.token}`
+                Authorization:`Bearer ${userInfo.token}`,
             },
         }
         //put request to update exisiting information
-        const {data}=await axios.get(`/api/orders/${id}`,config
-        )
+        const {data}=await axios.get(`/api/orders/${id}`,config)
         
         //dispatch of USER_DETAILS_SUCCESS
         dispatch({
@@ -90,7 +88,7 @@ export const payOrder=(orderId,paymentResult)=>async(dispatch,getState)=>{
         const config={
             headers:{
                 'Content-Type':'application/json',
-                Authorization:`Bearer ${userInfo.token}`
+                Authorization:`Bearer ${userInfo.token}`,
             },
         }
         //put request to update exisiting information

@@ -47,18 +47,17 @@ const OrderScreen = () => {
 
  
     useEffect(()=>{
-        const addPaypalScript=async()=>{
-            const {data:clientId}=await axios.get('/api/config/paypal')
-            // console.log(clientId)
-            const script=document.createElement('script')
-            script.type='text/javascript'
-            script.src= `https://www.paypal.com/sdk/js?client-id=${clientId}`
-            script.async=true
-            script.onload=()=>{
-                setSdkReady(true)
+        const addPayPalScript = async () => {
+            const { data: clientId } = await axios.get('/api/config/paypal')
+            const script = document.createElement('script')
+            script.type = 'text/javascript'
+            script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`
+            script.async = true
+            script.onload = () => {
+              setSdkReady(true)
             }
             document.body.appendChild(script)
-        }
+          }
 
        
         if(!order||successPay){
@@ -67,7 +66,7 @@ const OrderScreen = () => {
         }
         else if(!order.isPaid){
             if(!window.paypal){
-                addPaypalScript()
+                addPayPalScript()
             }else{
                 setSdkReady(true)
             }
@@ -77,6 +76,7 @@ const OrderScreen = () => {
 
 
     const successPaymentHandler=(paymentResult)=>{
+        console.log('in successPaymentHandler')
         console.log(paymentResult)
         dispatch(payOrder(orderId,paymentResult))
     }
@@ -178,7 +178,7 @@ const OrderScreen = () => {
                                     <Loader/>
                                 ):(
                                     <PayPalButton
-                                    amout={order.totalPrice}
+                                    amount={order.totalPrice}
                                     onSuccess={successPaymentHandler}
                                     />
                                 )}
