@@ -2,8 +2,7 @@ import path from 'path'
 import express from 'express'
 import dotenv from 'dotenv'
 import connectDB from './config/db.js'
-
-
+import morgan from 'morgan'
 import {notFound,errorHandler} from './middleware/errorMiddleware.js'
 import productRoutes from './routes/productRoutes.js';
 import userRoutes from './routes/userRoutes.js'
@@ -16,6 +15,9 @@ dotenv.config()
 connectDB()
 
 const app=express()
+//morgan settings
+if(process.env.NODE_ENV==='development')
+    app.use(morgan('dev'))
 
 //express.json() parses incoming JSON requests and puts the parsed data in req
 app.use(express.json())

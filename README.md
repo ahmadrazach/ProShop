@@ -34,7 +34,7 @@ Ecommerce App using MERN Stack
 - jsonwebtoken ( to send the userid to private routes in our application with the header)
 - react-paypal-button-v2
 - Multer ( for working with files on the server )
-
+- Morgan ( for consoling all the routes your application's going through)
 
 ## concepts I learn in it
 
