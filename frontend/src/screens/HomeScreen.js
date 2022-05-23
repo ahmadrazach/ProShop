@@ -6,10 +6,8 @@ import Message from '../components/Message'
 import Loader from '../components/Loader'
 import { listProducts } from '../actions/productActions';
 import { useParams } from 'react-router-dom';
-//import axios from 'axios'
 import Paginate from '../components/Paginate';
 import ProductCarousel from '../components/ProductCarousel';
-import Check from '../components/Check';
 
 const HomeScreen=()=> {
   

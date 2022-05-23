@@ -10,9 +10,13 @@ import { listProductDetails,updateProduct } from '../actions/productActions'
 import { PRODUCT_UPDATE_RESET } from '../constants/productConstants'
 
 const ProductEditScreen = ({ match }) => {
+
   const navigate=useNavigate()
   const params=useParams()
+  const dispatch = useDispatch()
+  
   const productId = params.id
+  
 
   const [name, setName] = useState('')
   const [price, setPrice] = useState(0)
@@ -22,8 +26,6 @@ const ProductEditScreen = ({ match }) => {
   const [countInStock, setCountInStock] = useState(0)
   const [description, setDescription] = useState('')
   const [uploading,setUploading]=useState(false)
-
-  const dispatch = useDispatch()
 
   const productDetails = useSelector((state) => state.productDetails)
   const { loading, error, product } = productDetails
