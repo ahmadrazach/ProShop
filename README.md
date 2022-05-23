@@ -1,4 +1,4 @@
-# ProShop
+# TecShop
 
 Ecommerce App using MERN Stack
 
