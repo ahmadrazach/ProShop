@@ -80,7 +80,7 @@ const OrderScreen = () => {
             }
         }
         
-    },[dispatch,orderId,successPay,order,successDeliver])
+    },[dispatch,orderId,successPay,order,successDeliver,userInfo])
 
 
     const successPaymentHandler=(paymentResult)=>{
