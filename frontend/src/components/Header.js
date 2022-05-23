@@ -10,7 +10,7 @@ const Header=()=> {
   const userLogin=useSelector(state=>state.userLogin)
   const {userInfo}=userLogin
 
-  //logout handler
+  
   const logoutHandler=()=>{
     dispatch(logout())
   }
