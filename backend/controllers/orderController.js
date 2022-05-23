@@ -1,7 +1,6 @@
 import asyncHandler from "express-async-handler";
 import Order from '../models/orderModel.js';
 
-
 // @desc Create new order
 // @route POST /api/orders
 // @access Private
@@ -100,7 +99,6 @@ const getMyOrders = asyncHandler(async (req, res) => {
     res.json(orders)
    
   })
-
 
 // @desc Get all orders
 // @route GET /api/orders
