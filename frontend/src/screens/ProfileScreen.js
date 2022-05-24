@@ -44,7 +44,7 @@ const ProfileScreen=()=> {
                 setEmail(user.email)
             }
         }
-    },[dispatch,navigate,userInfo,user])
+    },[dispatch,navigate,userInfo,user,orders,success])
     
     const submitHandler=(e)=>{
         e.preventDefault()

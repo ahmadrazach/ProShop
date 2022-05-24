@@ -202,7 +202,7 @@ export const listOrders=()=>async(dispatch,getState)=>{
         }
         //get request to see exisiting information
         const {data}=await axios.get(`/api/orders`,config)
-        console.log(data)
+        console.log('data',data)
         //dispatch of USER_PAY_SUCCESS
         dispatch({
             type:ORDER_LIST_SUCCESS,
