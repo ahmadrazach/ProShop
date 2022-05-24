@@ -4,7 +4,7 @@ function Footer() {
     return (
         <footer>
             <Container>
-                <Col className="text-center py-3">Copyright &copy; TecShop</Col>
+                <Col className="text-center py-3">Copyright &copy; ProShop</Col>
             </Container>
         </footer>
     )
