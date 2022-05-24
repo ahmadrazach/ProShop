@@ -1,14 +1,18 @@
 # ProShop
 
-Ecommerce App using MERN Stack
+<a href="https://proshopahmed.herokuapp.com/">Live Demo</a>
 
-## VS Code extensions for MERN productivity:
+<img src="" alt="Demo image"/>
 
-- ES7 React/Redux/GraphQL/React-Native snippets
-- JavaScript (ES6) code snippets
-- Prettier
+## Features:
 
-### Node Modules
+- Custom eCommerce store with React, Redux, Node, Express & MongoDB
+- Full featured shopping cart with Paypal & caredit/debit card payments
+- Product rating & review system
+- Admin area to manage customers, products & orders
+- Top rated products' Carousel, pgination & more!
+
+# Technologies Used
 
 ## Fontend
 
@@ -17,12 +21,7 @@ Ecommerce App using MERN Stack
 - axios
 - redux,react-redux,redux-thunk(to use function within the functions),redux-devtools-extension
 
-# React concepts
-
-- useEffect ( for working same which constructor do in the class components )
-- useState ( updating state of the variable)
-
-# Backend
+## Backend
 
 - express
 - nodemon ( for constantly watching our server so we don't have to keep resetart server after every update)
@@ -38,8 +37,19 @@ Ecommerce App using MERN Stack
 
 ## concepts I learn in it
 
-- Middleware
-    provides common services and capabilities to applications outside of what's offered by the operating system. Data management, application services, messaging, authentication, and API management are all commonly handled by middleware
+- React with Functional Components & hooks
+- React router
+- React-Bootstrap UI library
+- Structuring components
+- Managing global state with Redux
+- using Redux state in components
+- creating backend with Express
+- working with MongoDb database and Mongoose
+- JWT ( JSON Web Toekns ) authentication
+- creating custom authentication middelware
+- custom error Handler
+- Integrating Paypal
+- Project deployment on heroku
 
 ## Sanbox payment Checkout
 - Email ID:
