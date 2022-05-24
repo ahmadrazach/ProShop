@@ -2,7 +2,7 @@
 
 <a href="https://proshopahmed.herokuapp.com/">Live Demo</a>
 
-<img src="" alt="Demo image"/>
+<img src="https://github.com/ahmadrazach/ProShop/blob/main/homepage-showcase.jpg" alt="Demo image"/>
 
 # Main Features:
 
