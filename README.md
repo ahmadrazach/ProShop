@@ -4,7 +4,7 @@
 
 <img src="" alt="Demo image"/>
 
-## Features:
+# Main Features:
 
 - Custom eCommerce store with React, Redux, Node, Express & MongoDB
 - Full featured shopping cart with Paypal & caredit/debit card payments
@@ -35,7 +35,7 @@
 - Multer ( for working with files on the server )
 - Morgan ( for consoling all the routes your application's going through)
 
-## concepts I learn in it
+# Concepts I learn in it
 
 - React with Functional Components & hooks
 - React router
@@ -51,7 +51,8 @@
 - Integrating Paypal
 - Project deployment on heroku
 
-## Sanbox payment Checkout
+# Sanbox payment Checkout
+
 - Email ID:
 sb-wfir4315894770@personal.example.com
 - Password:
