@@ -40,3 +40,9 @@ Ecommerce App using MERN Stack
 
 - Middleware
     provides common services and capabilities to applications outside of what's offered by the operating system. Data management, application services, messaging, authentication, and API management are all commonly handled by middleware
+
+## Sanbox payment Checkout
+- Email ID:
+sb-wfir4315894770@personal.example.com
+- Password:
+gRk%#3C"
