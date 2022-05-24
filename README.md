@@ -12,6 +12,20 @@
 - Admin area to manage customers, products & orders
 - Top rated products' Carousel, pgination & more!
 
+# Website Credenetials
+
+## User Login
+| Name | Credential |
+| --- | --- |
+| email  | user@gmail.com  |
+| password  | admin123  |
+
+## Paypal Sanbox payment Checkout
+| Name | Credential |
+| --- | --- |
+| email  | sb-wfir4315894770@personal.example.com  |
+| password  | gRk%#3C"  |
+
 # Technologies Used
 
 ## Fontend
@@ -51,9 +65,9 @@
 - Integrating Paypal
 - Project deployment on heroku
 
-# Sanbox payment Checkout
 
-- Email ID:
-sb-wfir4315894770@personal.example.com
-- Password:
-gRk%#3C"
+
+
+
+
+
