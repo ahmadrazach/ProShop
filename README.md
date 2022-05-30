@@ -7,7 +7,7 @@
 # Main Features:
 
 - Custom eCommerce store with React, Redux, Node, Express & MongoDB
-- Full featured shopping cart with Paypal & caredit/debit card payments
+- Full featured shopping cart with Paypal & credit/debit card payments
 - Product rating & review system
 - Admin area to manage customers, products & orders
 - Top rated products' Carousel, pgination & more!
