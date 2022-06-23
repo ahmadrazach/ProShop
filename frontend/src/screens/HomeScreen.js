@@ -19,8 +19,6 @@ const HomeScreen=()=> {
   //destructuring the productList
   const { loading,error,products,page,pages } =productList
 
-  
-
   useEffect(()=>{
     dispatch(listProducts(pageNumber))
   },[dispatch,pageNumber])  
